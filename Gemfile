@@ -33,9 +33,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'foundation-rails'
 
 # Used to deploy to Heroku
-# gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
