@@ -29,8 +29,17 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Used for file uploads and manipulation
+gem 'carrierwave'
+
+# For using imagemagick
+gem 'mini_magick'
+
 # Use Foundation for quick styling
 gem 'foundation-rails'
+
+# used for Amazon S3 storage db
+gem "fog", "~> 1.3.1"
 
 # Used to deploy to Heroku
 gem 'rails_12factor', group: :production

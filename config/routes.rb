@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  resources :password_reset, only: [:new, :create, :show, :update]
+
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+  resources :sessions, only: [:new, :create, :destroy]
+
+  get 'sign_up' => 'users#new', :as => 'sign_up'
   resources :users
 
   root 'home#index'
