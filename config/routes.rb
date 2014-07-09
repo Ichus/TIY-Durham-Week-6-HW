@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post "create_password_reset" => "password_reset#create", :as => "create_password_reset"
   resources :password_reset, only: [:new, :create, :show, :update]
 
   get "log_out" => "sessions#destroy", :as => "log_out"
