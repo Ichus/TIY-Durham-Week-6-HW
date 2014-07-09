@@ -8,9 +8,9 @@ class PasswordReset < ActiveRecord::Base
   before_create :set_token
   before_create :set_expires_at
 
-  # def to_param
-  #   token
-  # end
+  def to_param
+    token
+  end
 
   def set_token
     self.token = SecureRandom.urlsafe_base64

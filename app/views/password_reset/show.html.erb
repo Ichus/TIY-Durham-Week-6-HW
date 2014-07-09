@@ -1,7 +1,7 @@
 <div class="panel small-6 small-centered columns">
   <h1>Change your password</h1>
 
-  <%= form_for @user, url: password_reset_path(id: @token) do |f| %>
+  <%= form_for @user, url: password_reset_path(@password_reset) do |f| %>
     <div class="field">
       <%= f.label :password %><br>
       <%= f.password_field :password %>
