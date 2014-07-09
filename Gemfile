@@ -38,8 +38,11 @@ gem 'mini_magick'
 # Use Foundation for quick styling
 gem 'foundation-rails'
 
+# Use Mandrill for delivering emails via SMPT
+gem 'mandrill-api'
+
 # used for Amazon S3 storage db
-gem "fog", "~> 1.3.1"
+gem "fog"# , "~> 1.3.1"
 
 # Used to deploy to Heroku
 gem 'rails_12factor', group: :production

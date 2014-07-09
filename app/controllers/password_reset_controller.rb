@@ -14,8 +14,7 @@ class PasswordResetController < ApplicationController
       AccountMailer.password_reset(password_reset).deliver
     end
 
-    redirect_to root_url, notice: "Check your email for a link to reset your password.
-                                   token =#{password_reset.token}"
+    redirect_to root_url, notice: "Check your email for a link to reset your password."                              
   end
 
   def show
