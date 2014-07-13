@@ -21,6 +21,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def change_password
+    @user = User.find(params[:id])
+  end
+
   # POST /users
   # POST /users.json
   def create
@@ -28,7 +32,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_path, notice: 'User was successfully created.' }
+        confirm = EmailConfirmation.create(user: @user)
+        AccountMailer.email_confirmation(@user, confirm).deliver
+        format.html { redirect_to log_in_path, notice: 'Check your email for a notification to confirm your account.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -42,7 +48,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'You succesfully updated your information.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

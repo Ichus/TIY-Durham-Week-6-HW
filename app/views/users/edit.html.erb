@@ -1,6 +1,10 @@
-<h1>Editing user</h1>
+<br><br><br><div class="panel small-6 small-centered columns">
+  <h1>Update you information</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+  <br><p>
+    <%= link_to "Change Password", change_password_path(@user),
+        class: ["button", "radius", "round", "tiny"] %>
+  </p>
+</div>

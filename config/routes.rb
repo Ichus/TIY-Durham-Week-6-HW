@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get "email_confirmation/:id" => "email_confirmation#welcome", :as => "email_confirmation"
+
   post "create_password_reset" => "password_reset#create", :as => "create_password_reset"
   resources :password_reset, only: [:new, :create, :show, :update]
 
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'sign_up' => 'users#new', :as => 'sign_up'
+  get 'change_password/:id' => 'users#change_password', :as => 'change_password'
   resources :users
 
   root 'home#index'

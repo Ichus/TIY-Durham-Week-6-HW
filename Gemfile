@@ -42,7 +42,7 @@ gem 'foundation-rails'
 gem 'mandrill-api'
 
 # used for Amazon S3 storage db
-gem "fog"# , "~> 1.3.1"
+gem "fog"# , "~> 1.3.1" Conflict with another gems use of later version of excon
 
 # Used to deploy to Heroku
 gem 'rails_12factor', group: :production
