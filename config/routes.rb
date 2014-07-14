@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get "email_confirmation/:id" => "email_confirmation#welcome", :as => "email_confirmation"
+  get "account_verification/:id" => "email_confirmation#welcome", :as => "account_verification"
 
   post "create_password_reset" => "password_reset#create", :as => "create_password_reset"
   resources :password_reset, only: [:new, :create, :show, :update]
