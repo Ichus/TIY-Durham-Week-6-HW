@@ -5,13 +5,13 @@ class AccountMailer < ActionMailer::Base
     @user = reset.user
     @url = password_reset_url(id: reset.token)
 
-    mail to: @user.email, subject: "chat_local, Reset your Password"
+    mail to: @user.email, subject: "Chart Local, Reset your Password"
   end
 
   def email_confirmation(user, confirmation)
     @user = user
     @url = account_verification_url(id: confirmation.token)
 
-    mail to: @user.email, subject: "chat_local, Welcome!"
+    mail to: @user.email, subject: "Chart Local, Welcome!"
   end
 end
